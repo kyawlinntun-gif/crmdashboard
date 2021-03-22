@@ -12,4 +12,19 @@ class Upcoming extends Model
     protected $fillable = [
       'title', 'completed', 'approved', 'waiting', 'taskId'
     ];
+
+    public function setCompletedAttribute($value)
+    {
+      $this->attributes['completed'] = $value ? $value : false;
+    }
+
+    public function setApprovedAttribute($value)
+    {
+      $this->attributes['approved'] = $value ? $value : false;
+    }
+
+    public function setWaitingAttribute($value)
+    {
+      $this->attributes['waiting'] = $value ? $value : true;
+    }
 }

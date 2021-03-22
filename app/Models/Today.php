@@ -12,4 +12,14 @@ class Today extends Model
     protected $fillable = [
       'title', 'completed', 'approved', 'taskId'
     ];
+
+    public function setCompletedAttribute($value)
+    {
+      $this->attributes['completed'] = $value ? $value : false;
+    }
+
+    public function setApprovedAttribute($value)
+    {
+      $this->attributes['approved'] = $value ? $value : false;
+    }
 }
